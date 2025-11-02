@@ -59,28 +59,28 @@ public class Test{
 
 
         //Problem 4.
-        int[] arr = {1,1,2,2,3,4,4,5};
-        int[] unique = new int[arr.length];
+        int[] arr = {1,1,2,2,3,4,4,5};//raw array
+        int[] unique = new int[arr.length]; //unique array with same length
         int count = 0;
 
         for (int i = 0; i < arr.length; i++) {
             boolean found = false;
 
             // check if already present
-            for (int j = 0; j < count; j++) {
+            for (int j = 0; j < count; j++) {//checking till count or dup element found 
                 if (arr[i] == unique[j]) {
                     found = true;
-                    break;
+                    break;//if found dup then break loop and found = true
                 }
             }
              // if not found, add it
-            if (found==false) {
-                unique[count] = arr[i];
-                count++;
+            if (found==false) {//if in unique arr element is not found duplicate
+                unique[count] = arr[i]; //then array i element is unique and it is added to unique array
+                count++;//and we increase count as new unique element is added
             }
         }
-        int uniqueArray[] = new int[count];
-        for(int i=0;i<uniqueArray.length;i++){
+        int uniqueArray[] = new int[count];//now new array can be created with exact length of unique element
+        for(int i=0;i<uniqueArray.length;i++){//after we remove 0 by adding only unique element in new array not 0
             uniqueArray[i] = unique[i];
         }
         System.out.println(Arrays.toString(uniqueArray));
